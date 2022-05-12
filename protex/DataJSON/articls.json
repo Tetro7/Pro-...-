@@ -1,0 +1,50 @@
+{
+  "articls": {
+    "1": {
+      "author_img": "images/avatar.png",
+      "date_publication": "сегодня в 22:41",
+      "preview": "images/preview.png",
+      "title": "Twitter согласился на предложение о покупке от Илона Маска",
+      "description": "По <a href='#' class='link'>информации</a> «Газета.Ru», следственный комитет РФ по запросу депутатов Госдумы возбудил уголовное дело по факту утечки данных пользователей «Яндекс.Еды».",
+      "content": "contents/1.txt",
+      "tags": [ "IT", "Test" ],
+      "watch": 15,
+      "comments": 17
+    },
+    "2": {
+      "author_img": "images/avatar.png",
+      "date_publication": "сегодня в 22:41",
+      "preview": "images/preview.png",
+      "title": "Twitter согласился на предложение о покупке от Илона Маска",
+      "description": "По <a href='#' class='link'>информации</a> «Газета.Ru», следственный комитет РФ по запросу депутатов Госдумы возбудил уголовное дело по факту утечки данных пользователей «Яндекс.Еды».",
+      "content": "contents/2.txt",
+      "tags": [ "IT", "Test" ],
+      "watch": 15,
+      "comments": 17
+    }
+  },
+  "news": {
+    "1": {
+      "author_img": "images/avatar.png",
+      "date_publication": "сегодня в 22:41",
+      "preview": "images/preview.png",
+      "title": "Twitter согласился на предложение о покупке от Илона Маска",
+      "description": "По <a href='#' class='link'>информации</a> «Газета.Ru», следственный комитет РФ по запросу депутатов Госдумы возбудил уголовное дело по факту утечки данных пользователей «Яндекс.Еды».",
+      "content": "contents/1.txt",
+      "tags": [ "IT", "Test" ],
+      "watch": 15,
+      "comments": 17
+    },
+    "2": {
+      "author_img": "images/avatar.png",
+      "date_publication": "сегодня в 22:41",
+      "preview": "images/preview.png",
+      "title": "Twitter согласился на предложение о покупке от Илона Маска",
+      "description": "По <a href='#' class='link'>информации</a> «Газета.Ru», следственный комитет РФ по запросу депутатов Госдумы возбудил уголовное дело по факту утечки данных пользователей «Яндекс.Еды».",
+      "content": "contents/1.txt",
+      "tags": [ "IT", "Test" ],
+      "watch": 15,
+      "comments": 17
+    }
+  }
+}
