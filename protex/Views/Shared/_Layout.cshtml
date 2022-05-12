@@ -102,10 +102,10 @@
                     <nav class="footer__menu">
                         <ul class="footer__menu-list">
                             <li class="footer__menu-item">
-                                <a class="footer__menu-link" asp-area="" asp-controller="Home" asp-action="Support">Техническая поддержка</a>
+                                @Html.ActionLink("Техническая поддержка", "Support", "Home", null, new {@class="footer__menu-link"})
                             </li>
                             <li class="footer__menu-item">
-                                <a class="footer__menu-link" asp-area="" asp-controller="Home" asp-action="About">О сайте</a>
+                                @Html.ActionLink("О сайте", "About", "Home", null, new {@class="footer__menu-link"})
                             </li>
                         </ul>
                     </nav>
