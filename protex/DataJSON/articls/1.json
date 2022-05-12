@@ -1,0 +1,12 @@
+{
+  "Id": 1,
+  "AuthorImg": "images/avatar.png",
+  "PublicationDate": "сегодня в 22:41",
+  "PreviewImg": "images/preview.png",
+  "Title": "Twitter согласился на предложение о покупке от Илона Маска",
+  "Description": "По <a href='#' class='link'>информации</a> «Газета.Ru», следственный комитет РФ по запросу депутатов Госдумы возбудил уголовное дело по факту утечки данных пользователей «Яндекс.Еды».",
+  "Content": "contents/1.txt",
+  "Tags": [ "IT", "Test" ],
+  "Watch": 15,
+  "Comments": 17
+}
