@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro{...}Tex - @ViewData["Title"]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="body">
+        <div class="wrapper">
+            <header class="header">
+                <div class="header__top">
+                    <div class="container">
+                        <div class="header__top-inner">
+                            <div class="header__logo">
+                                <a asp-area="" asp-controller="Home" asp-action="Index">
+                                    <img src="~/images/logo.svg" alt="" class="header__logo-img">
+                                </a>
+                            </div>
+
+                            <div class="header__buttons">
+                                <button class="search">
+                                    <img src="~/images/search-icon.svg" alt="" class="search-img">
+                                </button>
+                                <button class="account">
+                                    <img src="~/images/account-icon.svg" alt="" class="account-img">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header__bottom">
+                    <div class="container">
+                        <nav class="header__menu">
+                            <ul class="header__menu-list">
+                                <li class="header__menu-item">
+                                    <a href="#" class="header__menu-link">Все записи</a>
+                                </li>
+                                <li class="header__menu-item">
+                                    <a href="#" class="header__menu-link">Статьи</a>
+                                </li>
+                                <li class="header__menu-item">
+                                    <a href="#" class="header__menu-link">Новости</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <main class="main">
+                <div class="container">
+                    <div class="main__inner">
+                        <div class="contant">
+                            @RenderBody()
+                        </div>
+
+                        <div class="sidebars">
+                            <div class="sidebar">
+                                <h3 class="h3-title sidebar__title">
+                                    Лучшие авторы
+                                </h3>
+
+                                <ul class="sidebar__list">
+                                    <li class="sidebar__item">
+                                        <div class="sidebar__item-left">
+                                            <div class="sidebar__item-img-wrapper">
+                                                <img src="~/images/avatar.png" alt="" class="sidebar__item-img">
+                                            </div>
+                                            <p class="sidebar__item-title">
+                                                Tetro
+                                            </p>
+                                        </div>
+
+                                        <div class="sidebar__item-right">
+                                            <p class="sidebar__item-rating">
+                                                1 643 450
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <p class="copyright">
+                        © 2022, PRO{...}Tex
+                    </p>
+
+                    <nav class="footer__menu">
+                        <ul class="footer__menu-list">
+                            <li class="footer__menu-item">
+                                <a class="footer__menu-link" asp-area="" asp-controller="Home" asp-action="Support">Техническая поддержка</a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a class="footer__menu-link" asp-area="" asp-controller="Home" asp-action="About">О сайте</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
