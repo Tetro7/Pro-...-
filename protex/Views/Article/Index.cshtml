@@ -1,0 +1,108 @@
+﻿@using System.Text
+@using System.Web
+
+@model Article
+
+@{
+    ViewData["Title"] = @Model.Title;
+    StringBuilder articleContent = new StringBuilder();
+
+    using (StreamReader reader = new StreamReader(Model.Content))
+    {
+        string? line;
+
+        while ((line = await reader.ReadLineAsync()) != null)
+        {
+            articleContent.Append(line);
+        }
+    }
+}
+
+<div class="contant">
+    <div class="article single-article">
+        <div class="article__top">
+            <div class="article__img-wrapper">
+                <img src="~/@Model.AuthorImg" alt="" class="article__img">
+            </div>
+            <p class="article__date">
+                @Model.PublicationDate
+            </p>
+        </div>
+
+        <h3>
+            @Model.Title
+        </h3>
+
+        <img src="~/@Model.PreviewImg" alt="">
+
+        @Html.Raw(articleContent.ToString())
+
+        <div class="article__tags">
+            Теги: <span>@Model.Tags</span>
+        </div>
+
+        <div class="article__info">
+            <div class="article__statistics">
+                <img src="images/eye.svg" alt="" class="article__statistics-icon">
+                <p class="article__statistics-count">
+                    @Model.Watch
+                </p>
+            </div>
+        </div>
+
+        <div class="article__comments">
+            <h3 class="h3-title sidebar__title">
+                Комментарии <span>@Model.Comments</span>
+            </h3>
+
+            <ul class="article__comments-list">
+                <li class="article__comments-item">
+                    <div class="article__top">
+                        <div class="article__img-wrapper">
+                            <img src="images/avatar.png" alt="" class="article__img">
+                        </div>
+                        <p class="article__comments-nickname">
+                            Tetro
+                        </p>
+                        <p class="article__date">
+                            сегодня в 22:41
+                        </p>
+                    </div>
+
+                    <div class="article__comments-text">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio voluptatum officia maxime ea, quia pariatur a quibusdam voluptatibus eum dignissimos explicabo quos fugiat omnis exercitationem quasi. Nisi odio harum molestiae.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="article__comments-item">
+                    <div class="article__top">
+                        <div class="article__img-wrapper">
+                            <img src="~/images/avatar.png" alt="" class="article__img">
+                        </div>
+                        <p class="article__comments-nickname">
+                            Tetro
+                        </p>
+                        <p class="article__date">
+                            сегодня в 22:41
+                        </p>
+                    </div>
+
+                    <div class="article__comments-text">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio voluptatum officia maxime ea, quia pariatur a quibusdam voluptatibus eum dignissimos explicabo quos fugiat omnis exercitationem quasi. Nisi odio harum molestiae.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <form action="" class="article__comments-form" method="POST">
+                <textarea name="comment" class="article__comments-textarea" placeholder="Сообщение"></textarea>
+                <button class="article__comments-submit" type="submit">
+                    Отправить
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

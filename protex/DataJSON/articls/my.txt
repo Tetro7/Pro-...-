@@ -1,0 +1,21 @@
+<a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id" class="btn-primary btn mx-2">Edit</a>
+
+        //GET
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var categoryFromBd = _db.Categories.Find(id);
+
+            if (categoryFromBd == null)
+            {
+                return NotFound();
+            }
+
+            return View(categoryFromBd);
+        }
+
+        

@@ -1,48 +1,59 @@
-﻿@{
+﻿@using System.Text.Json
+
+@{
     ViewData["Title"] = "Главная";
+
+    string pathFolder = "DataJSON/articls";
+    IEnumerable<String> nameArticlFilesJSON = Directory.EnumerateFiles(pathFolder, "*.json", SearchOption.TopDirectoryOnly);
 }
 
-<div class="article">
-    <div class="article__top">
-        <div class="article__img-wrapper">
-            <img src="images/avatar.png" alt="" class="article__img">
-        </div>
-        <p class="article__date">
-            сегодня в 22:41
-        </p>
-    </div>
+@foreach (string file in nameArticlFilesJSON)
+{
+    using (FileStream fs = new FileStream(file, FileMode.Open))
+    {
+        Article? article = JsonSerializer.Deserialize<Article>(fs);
 
-    <h3 class="h3-title">
-        Twitter согласился на предложение о покупке от Илона Маска
-    </h3>
+        <div class="article">
+            <div class="article__top">
+                <div class="article__img-wrapper">
+                    <img src="@article.AuthorImg" alt="" class="article__img">
+                </div>
+                <p class="article__date">
+                    @article.PublicationDate
+                </p>
+            </div>
 
-    <div class="article__preview">
-        <img src="images/preview.png" alt="" class="article__preview-img">
-    </div>
+            <h3 class="h3-title">
+                @article.Title
+            </h3>
 
-    <p class="article__description">
-        По <a href="#" class="link">информации</a> «Газета.Ru», следственный комитет РФ по запросу депутатов
-        Госдумы
-        возбудил уголовное дело по факту утечки данных пользователей «Яндекс.Еды».
-    </p>
+            <div class="article__preview">
+                <img src="@article.PreviewImg" alt="" class="article__preview-img">
+            </div>
 
-    <a href="article.html" class="article__link link">
-        Подробнее
-    </a>
-
-    <div class="article__info">
-        <div class="article__statistics">
-            <img src="images/eye.svg" alt="" class="article__statistics-icon">
-            <p class="article__statistics-count">
-                15
+            <p class="article__description">
+                @article.Description
             </p>
-        </div>
 
-        <div class="article__statistics">
-            <img src="images/chat.svg" alt="" class="article__statistics-icon">
-            <p class="article__statistics-count">
-                15
-            </p>
+            <a class="article__link link" asp-controller="Article" asp-action="Index" asp-route-id="@article.Id">
+                Подробнее
+            </a>
+
+            <div class="article__info">
+                <div class="article__statistics">
+                    <img src="images/eye.svg" alt="" class="article__statistics-icon">
+                    <p class="article__statistics-count">
+                        @article.Watch
+                    </p>
+                </div>
+
+                <div class="article__statistics">
+                    <img src="images/chat.svg" alt="" class="article__statistics-icon">
+                    <p class="article__statistics-count">
+                        @article.Comments
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    }
+}
